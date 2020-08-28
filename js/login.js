@@ -1,4 +1,5 @@
 $(function () {
+    // 登录功能
     $('.submit').click(async function (e) {
         let account = $('.userName').val().trim();
         let password = $('.userPass').val().trim();
@@ -6,9 +7,10 @@ $(function () {
             alert('账号和密码不能为空');
             return;
         }
+        // 可以通过正则自己校验 test
         password = md5(password);
         // console.log(account,password);
-
+        // 发出ajax请求
         // axios.post('/user/login',{
         //     account,
         //     password

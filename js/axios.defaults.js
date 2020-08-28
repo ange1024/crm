@@ -1,7 +1,12 @@
-axios.defaults.baseURL = 'http://localhost:8888';
+// 对ajax进行二次封装
 
+axios.defaults.baseURL = 'http://127.0.0.1:8888';
+
+axios.defaults.withCredentials = true; //配置true，请求后台自动带上cookie
+
+// 数据以表单的形式传递
 axios.defaults.headers['Content-Type']='application/x-www-form-urlencoded';
-
+// 更改表单传输数据格式
 axios.defaults.transformRequest = function(data){
     if(!data) return data;
     let result ='';
